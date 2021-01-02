@@ -1,4 +1,4 @@
-# Experiment
+# Laboratory
 
 一个实验室，在这里做一些有趣的东西。
 
