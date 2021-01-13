@@ -1,11 +1,52 @@
-h1
-    margin: 0 0 1rem 0
-    font-size: 2.5rem
-    font-weight: normal
-    line-height: 4rem
-    text-align: center
-    text-transform: capitalize
+.container
+    position: relative
+    width: 100vw
+    height: 100vh
+    padding: 48px 72px
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    background-image: url('../assets/core.svg')
+    background-size: 50vw
+    background-position: center bottom
+    background-repeat: no-repeat
+    box-sizing: border-box
+    transition: all 0.2s
 
-    @media (prefers-color-scheme: dark)
-        svg
-            fill: #ffffff
+    h1
+        margin: 1rem 0
+        font-size: 2rem
+        font-weight: normal
+        line-height: 3rem
+        text-align: center
+        text-shadow: 0 0 24px rgba(0, 0, 0, 0.2)
+
+    button
+        width: 64px
+        height: 64px
+        margin: 1rem 0
+        border: none
+        color: transparent
+        background-color: transparent
+        background-image: url('../assets/start.svg')
+        background-size: 40px
+        background-position: center
+        background-repeat: no-repeat
+        cursor: pointer
+        transition: all 0.2s
+
+        &:hover
+            background-size: 48px
+
+    @media screen and ( max-width:  1024px)
+        background-size: 55vw
+
+    @media screen and ( max-width:  768px)
+        padding: 48px
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        background-size: 60vw
+
+    @media screen and ( max-width:  425px)
+        background-size: 110vw
