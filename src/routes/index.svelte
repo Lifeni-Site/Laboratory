@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '../styles/global.less';
 </script>
 
 <svelte:head>
@@ -10,17 +9,12 @@
   <h1>Hello, Laboratory</h1>
 </main>
 
-<style lang="less">
-  :root {
-    font-family: Overpass, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
+<style>
   main {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    margin: 0 auto;
+    @apply mx-auto;
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -33,8 +27,8 @@
     color: #000;
     font-size: 3.5rem;
     font-weight: 800;
-    line-height: 1.35;
-    margin: 4rem auto;
+    @apply leading-snug;
+    @apply my-16 mx-auto;
   }
 
   @media (max-width: 648px) {

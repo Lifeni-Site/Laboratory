@@ -6,7 +6,7 @@
 
 ## 技术
 
-使用 Svelte Kit 构建页面，部署在 Netlify 上。
+使用 Svelte Kit 和 Tailwind CSS 构建页面，部署在 Netlify 上。
 
 ## 协议相关
 
