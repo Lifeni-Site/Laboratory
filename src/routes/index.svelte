@@ -1,45 +1,40 @@
 <script lang="ts">
+  import Card from '$lib/Card.svelte';
+  import { gsap } from 'gsap';
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    gsap.from('.card', {
+      duration: 0.5,
+      x: 5,
+      scaleY: 0.95,
+      rotateY: '45deg',
+      transformOrigin: 'bottom left',
+      perspective: 2000,
+      opacity: 0,
+      stagger: {
+        from: 'start',
+        amount: 0.15,
+      },
+    });
+  });
 </script>
 
 <svelte:head>
-  <title>实验室</title>
+  <title>Space</title>
 </svelte:head>
 
 <main>
-  <h1>Hello, Laboratory</h1>
+  <Card>
+    <h2>Music</h2>
+  </Card>
+  <Card>
+    <h2>Timeline</h2>
+  </Card>
 </main>
 
 <style>
   main {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    @apply mx-auto;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    user-select: none;
-  }
-
-  h1 {
-    color: #000;
-    font-size: 3.5rem;
-    font-weight: 800;
-    @apply leading-snug;
-    @apply my-16 mx-auto;
-  }
-
-  @media (max-width: 648px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 2rem;
-    }
+    @apply w-full p-4 flex items-center justify-center gap-4 flex-wrap;
   }
 </style>
