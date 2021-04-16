@@ -16,6 +16,9 @@
         from: 'start',
         amount: 0.15,
       },
+      onStart: () => {
+        document.querySelector('main').classList.add('show');
+      },
     });
   });
 </script>
@@ -25,16 +28,20 @@
 </svelte:head>
 
 <main>
-  <Card>
+  <Card to="/music">
     <h2>Music</h2>
   </Card>
-  <Card>
+  <Card to="/timeline">
     <h2>Timeline</h2>
   </Card>
 </main>
 
 <style>
   main {
-    @apply w-full p-4 flex items-center justify-center gap-4 flex-wrap;
+    @apply w-full p-4 flex items-center justify-center gap-4 md:gap-6 flex-wrap opacity-0;
+
+    :global(&.show) {
+      @apply opacity-100;
+    }
   }
 </style>

@@ -15,11 +15,16 @@
       position: 'fixed',
       zIndex: '100',
       ease: 'expo.out',
+      onComplete: () => {
+        window.location.href = (element as HTMLElement).dataset.to;
+      },
     });
   };
+
+  export let to: string;
 </script>
 
-<div class="card" on:click={handleCardClick}>
+<div class="card" on:click={handleCardClick} data-to={to}>
   <slot />
 </div>
 
