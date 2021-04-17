@@ -4,5 +4,5 @@
 @tailwind utilities;
 
 #svelte {
-  @apply min-h-screen py-16 bg-gray-100 flex flex-col items-center justify-center;
+  @apply min-h-screen bg-gray-100 flex flex-col items-center justify-center;
 }

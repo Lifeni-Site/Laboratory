@@ -3,11 +3,11 @@
 </script>
 
 <svelte:head>
-  <title>Music | Space</title>
+  <title>Playground | Space</title>
 </svelte:head>
 
 <main>
-  <h1>Music</h1>
+  <h1>Playground</h1>
 </main>
 
 <style>

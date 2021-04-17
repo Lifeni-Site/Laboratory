@@ -2,23 +2,33 @@
   import { gsap } from 'gsap';
 
   const handleCardClick = (e: Event) => {
-    const element = e.target as Element;
+    const element = e.target as HTMLDivElement;
+    element.classList.add('current');
 
-    gsap.to(element, {
-      duration: 0.8,
-      width: '100vw',
-      height: '100vh',
-      x: 0,
-      y: 0,
-      autoRound: false,
-      transformOrigin: '50% 50%',
-      position: 'fixed',
-      zIndex: '100',
-      ease: 'expo.out',
-      onComplete: () => {
-        window.location.href = (element as HTMLElement).dataset.to;
+    const tl = gsap.timeline();
+
+    tl.to('.card:not(.current)', {
+      duration: 0.2,
+      opacity: 0,
+    }).to(
+      element,
+      {
+        duration: 1,
+        width: '100vw',
+        height: '100vh',
+        x: 0,
+        y: 0,
+        position: 'fixed',
+        autoRound: false,
+        transformOrigin: '50% 50%',
+        zIndex: '100',
+        ease: 'expo.out',
+        onComplete: () => {
+          window.location.href = (element as HTMLElement).dataset.to;
+        },
       },
-    });
+      '-=0.1'
+    );
   };
 
   export let to: string;
@@ -30,6 +40,6 @@
 
 <style>
   .card {
-    @apply w-full sm:w-72 h-96 p-4 rounded-sm bg-white shadow-sm hover:shadow-lg transition-shadow;
+    @apply relative z-10 w-full sm:w-72 h-96 p-4 cursor-pointer rounded-sm bg-white shadow-sm hover:shadow-lg transition-shadow;
   }
 </style>

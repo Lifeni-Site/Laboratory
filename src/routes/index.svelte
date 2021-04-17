@@ -21,6 +21,8 @@
       },
     });
   });
+
+  export const ssr = false;
 </script>
 
 <svelte:head>
@@ -28,6 +30,9 @@
 </svelte:head>
 
 <main>
+  <Card to="/playground">
+    <h2>Playground</h2>
+  </Card>
   <Card to="/music">
     <h2>Music</h2>
   </Card>
