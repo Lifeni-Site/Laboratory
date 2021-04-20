@@ -12,6 +12,10 @@
 
 <style>
   main {
-    @apply min-h-screen w-screen bg-white p-4;
+    @apply min-h-screen w-screen bg-white p-8;
+
+    h1 {
+      @apply text-2xl font-light font-sans;
+    }
   }
 </style>

@@ -30,15 +30,9 @@
 </svelte:head>
 
 <main>
-  <Card to="/playground">
-    <h2>Playground</h2>
-  </Card>
-  <Card to="/music">
-    <h2>Music</h2>
-  </Card>
-  <Card to="/timeline">
-    <h2>Timeline</h2>
-  </Card>
+  <Card to="/playground" title="Playground" />
+  <Card to="/music" title="Music" />
+  <Card to="/timeline" title="Timeline" />
 </main>
 
 <style>
