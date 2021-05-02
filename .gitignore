@@ -1,5 +1,5 @@
-.DS_Store
+.build
+dist
+build
+web_modules
 node_modules
-/.svelte
-/build
-/functions
