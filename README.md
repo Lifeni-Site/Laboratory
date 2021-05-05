@@ -2,7 +2,7 @@
 
 一个实验室，在这里做一些有趣的东西。
 
-大概在 [https://lab.lifeni.life](https://lab.lifeni.life)。
+大概在 [https://lab.lifeni.life](https://lab.lifeni.life) 。
 
 ## 技术
 
