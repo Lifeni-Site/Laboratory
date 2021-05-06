@@ -6,6 +6,7 @@ specifiers:
   '@snowpack/plugin-babel': ^2.1.7
   '@snowpack/plugin-postcss': ^1.2.2
   '@snowpack/plugin-typescript': ^1.2.1
+  '@types/node': ^15.0.2
   '@types/snowpack-env': ^2.3.3
   babel-preset-solid: ^0.26.5
   postcss: ^8.2.14
@@ -14,7 +15,7 @@ specifiers:
   snowpack: ^3.3.7
   solid-js: '>= 0.26'
   typescript: ^4.2.4
-  windicss: ^2.5.14
+  windicss: ^3.0.0-beta.6
 
 dependencies:
   solid-js: 0.26.5
@@ -25,6 +26,7 @@ devDependencies:
   '@snowpack/plugin-babel': 2.1.7
   '@snowpack/plugin-postcss': 1.2.2_postcss@8.2.14
   '@snowpack/plugin-typescript': 1.2.1_typescript@4.2.4
+  '@types/node': 15.0.2
   '@types/snowpack-env': 2.3.3
   babel-preset-solid: 0.26.5_@babel+core@7.14.0
   postcss: 8.2.14
@@ -32,7 +34,7 @@ devDependencies:
   prettier: 2.2.1
   snowpack: 3.3.7
   typescript: 4.2.4
-  windicss: 2.5.14
+  windicss: 3.0.0-beta.6
 
 packages:
 
@@ -492,6 +494,10 @@ packages:
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
+    dev: true
+
+  /@types/node/15.0.2:
+    resolution: {integrity: sha512-p68+a+KoxpoB47015IeYZYRrdqMUcpbK8re/zpFB8Ld46LHC1lPEbp3EXgkEhAYEcPvjJF6ZO+869SQ0aH1dcA==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -2278,6 +2284,12 @@ packages:
 
   /windicss/2.5.14:
     resolution: {integrity: sha512-8Lm7U1M5AzJPbiaVSVz7qWdETRzlkv//5LBMICBBAojos1jo09lUGhNZ5rBzHeldB9JmqYMDOGgrrXHExu0EAg==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dev: true
+
+  /windicss/3.0.0-beta.6:
+    resolution: {integrity: sha512-rHpDLVC3H/3ls98NcjPlCXuu81fpjtS7sZX7fWVdIwZvtwFolmrGw3hrDdh+WXUubO1RIdqANxI5Hs0US9Ksqg==}
     engines: {node: '>= 12'}
     hasBin: true
     dev: true

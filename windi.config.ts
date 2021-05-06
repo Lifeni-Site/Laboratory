@@ -1,11 +1,11 @@
 import { defineConfig } from 'windicss/helpers';
+import filter from 'windicss/plugin/filters';
 
 export default defineConfig({
   extract: {
     include: ['src/**/*.tsx', './**/*.html'],
   },
-  safelist: ['prose', 'prose-sm', 'm-auto'],
-  darkMode: 'class',
+  darkMode: false,
   theme: {
     extend: {
       fontFamily: {
@@ -13,11 +13,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [
-    require('windicss/plugin/filters'),
-    require('windicss/plugin/forms'),
-    require('windicss/plugin/aspect-ratio'),
-    require('windicss/plugin/line-clamp'),
-    require('windicss/plugin/typography')(),
-  ],
+  plugins: [filter],
 });
