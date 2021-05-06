@@ -1,5 +1,4 @@
 import { defineConfig } from 'windicss/helpers';
-import typography from 'windicss/plugin/typography';
 
 export default defineConfig({
   extract: {
@@ -7,8 +6,18 @@ export default defineConfig({
   },
   safelist: ['prose', 'prose-sm', 'm-auto'],
   darkMode: 'class',
-  plugins: [typography],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: 'Inter, sans-serif',
+      },
+    },
   },
+  plugins: [
+    require('windicss/plugin/filters'),
+    require('windicss/plugin/forms'),
+    require('windicss/plugin/aspect-ratio'),
+    require('windicss/plugin/line-clamp'),
+    require('windicss/plugin/typography')(),
+  ],
 });

@@ -1,11 +1,12 @@
 import type { Component } from 'solid-js';
+import { AppBar } from './apps/system/AppBar';
+import { Desktop } from './apps/system/Desktop';
 
 export const App: Component = () => {
   return (
-    <>
-      <main className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-12">
-        <h1 className="text-2xl text-gray-100">Web Space</h1>
-      </main>
-    </>
+    <main className="w-screen h-screen overflow-hidden font-sans">
+      <Desktop />
+      <AppBar />
+    </main>
   );
 };
