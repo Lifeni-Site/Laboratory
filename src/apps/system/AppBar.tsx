@@ -12,9 +12,10 @@ export const AppBar: Component = () => {
         </section>
         <section className="flex items-center justify-center gap-6">
           <AppIcon name="explorer" title="File Explorer" />
-          <AppIcon name="chrome" title="Chrome" />
-          <AppIcon name="music-player" title="Music Player" />
+          <AppIcon name="console" title="Console" />
+          <AppIcon name="chrome" title="Fake Chrome" />
           <AppIcon name="notepad" title="Notepad" />
+          <AppIcon name="music-player" title="Music Player" />
         </section>
         <section className="flex items-center justify-center">
           <Clock />
