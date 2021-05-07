@@ -14,6 +14,11 @@
 
 本项目以 木兰宽松许可证 第2版 开放源代码。
 
+网页中使用的图标来自 [icons8](https://icons8.com/icon/set/monitor/fluent) 。
+
+默认壁纸由 <a href="https://unsplash.com/@babybluecat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">J Lee</a> 拍摄，并发布在 <a href="https://unsplash.com/s/visual/2649a307-8db8-4063-a84f-2c26002ba741?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> 上。
+
+
 ```
 Copyright (c) 2021 Lifeni
 Laboratory is licensed under Mulan PSL v2.

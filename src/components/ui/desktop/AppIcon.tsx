@@ -5,9 +5,7 @@ interface IAppIconProps {
   title: string;
 }
 
-export const AppIcon: Component<IAppIconProps> = (props) => {
-  const { name, title } = props;
-
+export const AppIcon: Component<IAppIconProps> = ({ name, title }) => {
   return (
     <button className="group relative w-12 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 !outline-none hover:w-24 ">
       <img
