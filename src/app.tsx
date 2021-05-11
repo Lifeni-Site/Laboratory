@@ -6,7 +6,7 @@ import { BaseWindow } from './components/window/Base';
 export const App: Component = () => {
   return (
     <main className="w-screen h-screen overflow-hidden font-sans">
-      <BaseWindow />
+      <BaseWindow props={{}} />
       <Desktop />
       <AppBar />
     </main>

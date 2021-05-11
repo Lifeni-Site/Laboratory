@@ -1,11 +1,11 @@
 interface IBaseWindow {
-  app: string;
-  name: string;
-  title: string;
+  app?: string;
+  name?: string;
+  title?: string;
   icon?: string;
-  minimize: boolean;
-  maximize: boolean;
-  styles: {
+  minimize?: boolean;
+  maximize?: boolean;
+  styles?: {
     left: string;
     top: string;
     'z-index': number;

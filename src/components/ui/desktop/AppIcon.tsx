@@ -7,7 +7,7 @@ interface IAppIconProps {
 
 export const AppIcon: Component<IAppIconProps> = ({ name, title }) => {
   return (
-    <button className="group relative w-12 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 !outline-none hover:w-24 ">
+    <button className="group relative w-12 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 !outline-none hover:w-24 select-none">
       <img
         className="w-12 h-12 transform transition filter drop-shadow-md duration-300 pointer-events-none group-hover:scale-175 group-hover:-translate-y-10 group-hover:drop-shadow-lg"
         src={`/assets/app-icons/${name}.png`}

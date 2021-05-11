@@ -2,7 +2,7 @@ import type { Component } from 'solid-js';
 
 export const StartMenu: Component = () => {
   return (
-    <button className="relative w-12 p-2 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 !outline-none ">
+    <button className="relative w-12 p-2 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 !outline-none select-none">
       <img
         className="w-8 h-8 pointer-events-none"
         src="/assets/system-svgs/menu.svg"

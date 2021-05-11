@@ -1,4 +1,4 @@
-import type { Component } from 'solid-js';
+import { Component, createEffect, createSignal } from 'solid-js';
 
 const defaultWindowProps: IBaseWindow = {
   app: 'default',
@@ -24,22 +24,82 @@ interface IBaseWindowProps {
 }
 
 export const BaseWindow: Component<IBaseWindowProps> = ({ props }) => {
-  const windowProps = { ...defaultWindowProps, ...props };
+  const [isClicked, setIsClicked] = createSignal(false);
+  const [windowPosition, setWindowPosition] = createSignal({ x: 72, y: 72 });
+  const [windowProps, setWindowProps] = createSignal({
+    ...defaultWindowProps,
+    ...props,
+  });
+
+  let windowRef: HTMLDivElement;
+
+  const handlePointerDown = (event: MouseEvent) => {
+    if (event.target.tagName !== 'BUTTON') {
+      setIsClicked(true);
+      setWindowPosition({ x: event.offsetX, y: event.offsetY });
+      setWindowProps({
+        ...windowProps(),
+        styles: {
+          ...windowProps().styles,
+          'z-index': windowProps().styles['z-index'] + 1,
+        },
+      });
+    }
+  };
+
+  createEffect(() => {
+    window.onmousemove = (event: MouseEvent) => {
+      if (isClicked()) {
+        window.requestAnimationFrame(() => {
+          windowRef.style.left = `${event.clientX - windowPosition().x}px`;
+          windowRef.style.top = `${event.clientY - windowPosition().y}px`;
+        });
+      }
+    };
+
+    window.onmouseup = (event: MouseEvent) => {
+      if (isClicked()) {
+        window.requestAnimationFrame(() => {
+          setIsClicked(false);
+          const x = event.clientX - windowPosition().x;
+          const y = event.clientY - windowPosition().y;
+
+          setWindowProps({
+            ...windowProps(),
+            styles: {
+              ...windowProps().styles,
+              left: `${x}px`,
+              top: `${y}px`,
+            },
+          });
+        });
+      }
+    };
+  });
 
   return (
     <div
+      ref={windowRef}
       className={`fixed flex bg-white rounded-md overflow-hidden`}
-      style={{ ...windowProps.styles }}
+      style={{ ...windowProps().styles }}
     >
-      <div className="relative flex items-center justify-between w-full h-12 gap-4 bg-gray-100 overflow-hidden">
-        <section className="flex items-center px-4 gap-4">
-          <img src={windowProps.icon} alt="Window Icon" className="w-6 h-6" />
+      <div
+        className={`relative flex items-center justify-between w-full h-12 gap-4 bg-gray-100 overflow-hidden ${
+          isClicked() ? 'cursor-move' : ''
+        }`}
+        onMouseDown={handlePointerDown}
+      >
+        <section className="flex items-center px-4 gap-4 select-none">
+          <img src={windowProps().icon} alt="Window Icon" className="w-6 h-6" />
           <span className="text-md pointer-events-none select-none whitespace-nowrap">
-            {windowProps.title}
+            {windowProps().title}
           </span>
         </section>
-        <section className="flex items-center">
-          <button className="w-12 h-12 flex items-center justify-center !outline-none hover:bg-gray-200 transition">
+        <section className="flex items-center select-none">
+          <button
+            className="w-12 h-12 flex items-center justify-center !outline-none hover:bg-gray-200 transition"
+            onClick={() => {}}
+          >
             <img
               className="w-4 h-4 pointer-events-none"
               src="/assets/system-svgs/minimize.svg"
