@@ -34,7 +34,7 @@ export const BaseWindow: Component<IBaseWindowProps> = ({ props }) => {
   let windowRef: HTMLDivElement;
 
   const handlePointerDown = (event: MouseEvent) => {
-    if (event.target.tagName !== 'BUTTON') {
+    if ((event.target as HTMLButtonElement).tagName !== 'BUTTON') {
       setIsClicked(true);
       setWindowPosition({ x: event.offsetX, y: event.offsetY });
       setWindowProps({
